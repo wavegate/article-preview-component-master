@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+  --desaturatedDarkBlue: hsl(214, 17%, 51%);
+  --grayishBlue: hsl(212, 23%, 69%);
+  --lightGrayishBlue: hsl(210, 46%, 95%);
+  font-size: 13px;
+  font-family: "Manrope", sans-serif;
+  color: var(--veryDarkGrayishBlue);
+}
+
+body {
+  background-color: var(--lightGrayishBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  height: 280px;
+  width: 730px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  box-shadow: 0px 20px 20px hsla(217, 19%, 35%, 0.1);
+}
+
+#drawers {
+  width: 285px;
+  object-fit: cover;
+  border-radius: 8px 0px 0px 8px;
+}
+
+#textSection {
+  padding: 32px 32px 32px 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 1.6em;
+}
+
+p {
+  color: var(--desaturatedDarkBlue);
+  line-height: 1.6rem;
+}
+
+#row {
+  display: flex;
+  align-items: center;
+}
+
+#avatarMichelle {
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+#column {
+  margin-right: 165px;
+}
+
+#name {
+  font-weight: 700;
+}
+
+#date {
+  color: var(--grayishBlue);
+}
+
+button {
+  all: unset;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: var(--lightGrayishBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#tooltip {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 15px 40px 15px 40px;
+  position: absolute;
+  width: 250px;
+  top: -80px;
+  left: -110px;
+  background: var(--veryDarkGrayishBlue);
+  color: var(--grayishBlue);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+#tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: var(--veryDarkGrayishBlue) transparent transparent transparent;
+}
+
+.selected {
+  background-color: var(--veryDarkGrayishBlue);
+}
+
+.selected > img {
+  filter: brightness(0) invert(1);
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    display: initial;
+  }
+
+  main {
+    width: 330px;
+    height: auto;
+    flex-direction: column;
+    position: relative;
+    margin: 80px auto;
+  }
+
+  #drawers {
+    width: 100%;
+    height: 210px;
+    border-radius: 8px 8px 0px 0px;
+  }
+
+  #textSection {
+    display: block;
+    padding: 36px 32px 24px 32px;
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
+
+  #row {
+    justify-content: space-between;
+  }
+
+  #avatarMichelle {
+    margin-right: 0px;
+  }
+
+  #column {
+    margin-right: 50px;
+  }
+
+  #tooltip {
+    width: 330px;
+    height: 70px;
+    left: -268px;
+    top: -20px;
+    border-radius: 0px 0px 8px 8px;
+    padding-right: 120px;
+    z-index: -1;
+  }
+
+  .selected {
+    background: var(--lightGrayishBlue);
+  }
+
+  .selected > img {
+    filter: none;
+  }
+
+  #buttonWrapper {
+    z-index: 0;
+  }
+
+  #tooltip::after {
+    all: unset;
+  }
+}
